@@ -40,5 +40,27 @@ namespace Chapter1
             stringToFind);
             Assert.AreEqual(expectedResult, actualResult);
         }
+
+        [TestCase]
+        public void ShouldBeAbleToHandleNulls()
+        {
+            string stringToCheck = null;
+            var stringToFind = "s";
+            var expectedResult = -1;
+            var classUnderTest = new StringUtilities();
+            var actualResult = classUnderTest.CountOccurences(stringToCheck, stringToFind);
+            Assert.AreEqual(expectedResult, actualResult);
+        }
+
+        [TestCase]
+        public void ShouldBeAbleToHandleEmptyString()
+        {
+            string stringToCheck = "";
+            var stringToFind = "s";
+            var expectedResult = -1;
+            var classUnderTest = new StringUtilities();
+            var actualResult = classUnderTest.CountOccurences(stringToCheck, stringToFind);
+            Assert.AreEqual(expectedResult, actualResult);
+        }
     }
 }
